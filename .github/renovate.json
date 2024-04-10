@@ -1,0 +1,65 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        "mergeConfidence:all-badges",
+        ":rebaseStalePrs",
+        "helpers:pinGitHubActionDigests"
+    ],
+    "timezone": "US/Mountain",
+    "schedule": [
+        "every weekday"
+    ],
+    "labels": [],
+    "packageRules": [
+        {
+            "description": "Disables for non major Renovate version",
+            "matchPaths": [
+                ".github/renovate-update-notification/Dockerfile"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "pin",
+                "digest",
+                "rollback"
+            ],
+            "enabled": false
+        },
+        {
+            "description": "Generate for major Renovate version",
+            "matchPaths": [
+                ".github/renovate-update-notification/Dockerfile"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "addLabels": [
+                "upgrade"
+            ],
+            "automerge": false
+        },
+        {
+            "description": "Label new images in workflows",
+            "matchPaths": [
+                ".github/workflows/release-image.yml"
+            ],
+            "addLabels": [
+                "workflow-update"
+            ],
+            "automerge": false,
+            "minimumReleaseAge": "3 days"
+        },        
+        {
+            "description": "Label new images",
+            "matchPaths": [
+                "docker/Dockerfile"
+            ],
+            "addLabels": [
+                "image-update"
+            ],
+            "automerge": false,
+            "minimumReleaseAge": "3 days"
+        }
+    ]
+}
