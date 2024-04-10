@@ -7,6 +7,11 @@ Taiga Back image that includes the OpenID Plugin.
 [taiga-contrib-oidc-auth](https://github.com/taigaio/taiga-contrib-oidc-auth)
 
 
+## Workflows
+
+[![release-image](https://github.com/alexlebens/taiga-back-docker-oidc/actions/workflows/release-image.yml/badge.svg)](https://github.com/alexlebens/taiga-back-docker-oidc/actions/workflows/release-image.yml)
+
+
 # Environment Values
 
 Use the following environmental setting to configure the taiga-back image to enable OIDC auth.
