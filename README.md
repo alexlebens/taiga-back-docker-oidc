@@ -1,5 +1,4 @@
 # taiga-docker-oidc
-=========================
 
 Images that include the OpenID Plugin.
 
