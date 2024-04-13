@@ -6,5 +6,5 @@ LABEL description="Taiga Back image that includes the OpenID Plugin."
 ADD config/ /tmp/
 
 RUN pip install taiga-contrib-oidc-auth \
-    cat /tmp/config.py >> /taiga-back/settings/config.py \
-    mv /tmp/urls.py /taiga-back/settings/urls.py
+    && cat /tmp/config.py.snippet >> /taiga-back/settings/config.py \
+    && mv /tmp/urls.py.snippet /taiga-back/settings/urls.py
