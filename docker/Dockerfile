@@ -1,7 +1,7 @@
+FROM taigaio/taiga-back:6.7.3
+
 LABEL version="6.7.3"
 LABEL description="Taiga Back image that includes the OpenID Plugin."
-
-FROM taigaio/taiga-back:6.7.3
 
 ADD config /tmp/
 
