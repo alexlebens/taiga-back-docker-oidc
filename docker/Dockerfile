@@ -19,7 +19,7 @@ RUN set -eux; \
     apt-get install -y \
         git; \
     pip install mozilla-django-oidc; \
-    pip install taiga-contrib-oidc-auth @ git+https://github.com/taigaio/taiga-contrib-oidc-auth.git@master#subdirectory=back; \
+    pip install git+https://github.com/taigaio/taiga-contrib-oidc-auth.git@master#subdirectory=back; \
     apt-get purge -y \
         git; \
     apt-get autoremove -y; \    
