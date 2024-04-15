@@ -1,6 +1,8 @@
 
-# Enviromental Varaibles for OIDC Plugin
-import os
+
+#########################################
+##  IMPORTERS
+#########################################
 OIDC_ENABLED = os.getenv('OIDC_ENABLED', 'False') == 'True'
 if OIDC_ENABLED:
     INSTALLED_APPS += [

@@ -13,7 +13,7 @@ RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Add configuration
-COPY config/local.py /tmp/local.py
+COPY config/config.py /tmp/config.py
 COPY config/urls.py /taiga-back/settings/urls.py
 
 RUN set -eux; \
@@ -28,8 +28,7 @@ RUN set -eux; \
     pip install git+https://github.com/taigaio/taiga-contrib-oidc-auth.git@master#subdirectory=back; \
 
     # Appened config 
-    cat /tmp/local.py >> /taiga-back/settings/config.py; \
-    cat /taiga-back/settings/config.py; \
+    cat /tmp/config.py >> /taiga-back/settings/config.py; \
 
     # Remove git
     apt-get purge -y \
