@@ -1,3 +1,5 @@
+
+# Enviromental Varaibles for OIDC Plugin
 import os
 OIDC_ENABLED = os.getenv('OIDC_ENABLED', 'False') == 'True'
 if OIDC_ENABLED:
