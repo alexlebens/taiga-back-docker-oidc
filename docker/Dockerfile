@@ -28,8 +28,8 @@ RUN set -eux; \
     pip install git+https://github.com/taigaio/taiga-contrib-oidc-auth.git@master#subdirectory=back; \
 
     # Appened config 
-    cat /tmp/local.py >> /taiga-back/settings/config.py
-    cat /taiga-back/settings/config.py
+    cat /tmp/local.py >> /taiga-back/settings/config.py; \
+    cat /taiga-back/settings/config.py; \
 
     # Remove git
     apt-get purge -y \
