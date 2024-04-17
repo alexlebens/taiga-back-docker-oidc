@@ -14,6 +14,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # Add configuration
 COPY config/config.py /tmp/config.py
+COPY config/urls.py /tmp/urls.py
 
 RUN set -eux; \
 
@@ -26,8 +27,9 @@ RUN set -eux; \
     pip install mozilla-django-oidc; \
     pip install git+https://github.com/taigaio/taiga-contrib-oidc-auth.git@master#subdirectory=back; \
 
-    # Appened config 
+    # Appened config
     cat /tmp/config.py >> /taiga-back/settings/config.py; \
+    cat /tmp/urls.py >> /taiga-back/taiga/urls.py; \
 
     # Remove git
     apt-get purge -y \
