@@ -14,7 +14,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # Add configuration
 COPY config/config.py /tmp/config.py
-COPY config/urls.py /tmp/urls.py
+COPY config/urls.py /taiga-back/settings/urls.py
 
 RUN set -eux; \
 
@@ -29,7 +29,6 @@ RUN set -eux; \
 
     # Appened config
     cat /tmp/config.py >> /taiga-back/settings/config.py; \
-    cat /tmp/urls.py >> /taiga-back/taiga/urls.py; \
 
     # Remove git
     apt-get purge -y \

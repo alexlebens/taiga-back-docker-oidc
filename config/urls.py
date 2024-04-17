@@ -4,7 +4,8 @@
 # OIDC
 ##############################################
 
-if settings.OIDC_ENABLED:
-    urlpatterns += [
-        re_path(r"^oidc/", include("mozilla_django_oidc.urls")),
-    ]
+from taiga.urls import *
+
+urlpatterns += [
+    url(r"^oidc/", include("mozilla_django_oidc.urls")),
+]
