@@ -14,7 +14,6 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # Add configuration
 COPY config/config.py /tmp/config.py
-COPY config/urls.py /taiga-back/settings/urls.py
 
 RUN set -eux; \
 

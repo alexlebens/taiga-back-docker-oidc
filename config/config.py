@@ -1,7 +1,7 @@
 
 
 #########################################
-##  IMPORTERS
+##  OIDC
 #########################################
 OIDC_ENABLED = os.getenv('OIDC_ENABLED', 'False') == 'True'
 if OIDC_ENABLED:
@@ -23,3 +23,8 @@ if OIDC_ENABLED:
     OIDC_OP_AUTHORIZATION_ENDPOINT = os.getenv("OIDC_AUTHORIZATION_ENDPOINT")
     OIDC_OP_TOKEN_ENDPOINT = os.getenv("OIDC_TOKEN_ENDPOINT")
     OIDC_OP_USER_ENDPOINT = os.getenv("OIDC_USER_ENDPOINT")
+
+from taiga.urls import *
+urlpatterns += [
+    re_path(r"^oidc/", include("mozilla_django_oidc.urls")),
+]
